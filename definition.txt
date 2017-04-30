@@ -1,0 +1,20 @@
+This file contains all the definition you need to know before reading the program:
++ expression symbol: symbols like A or XOR that represents expression. But they are not expressions themselves
++ level: a list of expression symbols
++ expression (logic expression) (abr exp): a list of levels. But not just any list of levels can be an expression. And the restraints are built defined in the code. An expression which is ready to be evaluated is called a 'complete expression'
++ Some diagram:
+        |AND|
+    |A|       |XOR|
+           |B|     |C|
+* still don't understand? the whole tree is an expression. each line is a level. each 'thing' in the 'absolute value sign' is an expression symbol
+
+
++ When you say X_stream: it means that stream's value will represent X, if you know how to decode that stream
++ A stream's value absolutely must be a list
++ The location of a node on a tree: represented by the pair x and y. x ix the level of the node; likewise, y is the position of that node on that level from left to rigth. The pair of x and y should be a tuple (right?)
+
+------------------------------------------
+That's enough for an abstract machine, from here on out I'll try to make up concepts that will help building a faster model:
++ pair: a pair is a tuple (?) of two logical symbols. Though I'm using tuple here, note that the order of the pair doesn't matter, and that two pair with the same symbols ordered differently are identical
++ pair is just a means to save memory during the construction of a level. Aside from that, it isn't used in any other function due to compatibility
+
