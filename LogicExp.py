@@ -132,9 +132,9 @@ def is_complete(exp: list) -> bool:
 
     if not exp == []:
         last_level = exp[len(exp) - 1]
-        result = True
         for exp in last_level:
             if type(exp) is Op:
                 result = False
                 break
+        else: result = True
     return result
